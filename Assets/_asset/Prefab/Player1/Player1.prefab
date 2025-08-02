@@ -369,7 +369,8 @@ MonoBehaviour:
   Right: 100
   Down: 115
   Jump: 32
-  Atk: 106
+  MeleAtk: 106
+  RangeAtk: 104
   Strike: 107
   Dash: 108
 --- !u!1 &7726750724637615009

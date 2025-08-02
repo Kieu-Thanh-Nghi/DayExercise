@@ -8,6 +8,7 @@ public static class AnimName
     public const string Strike = "Strike";
     public const string FlyKick = "FlyKick";
     public const string JumpAttack = "JumpAtk";
+    public const string Block = "Block";
 
     public static class AnimParameter
     {
@@ -15,5 +16,6 @@ public static class AnimName
         public const string DashTrigger = "DashTrigger";
         public const string StrikeTrigger = "StrikeTrigger";
         public const string RangeAtkTrigger = "RangeAtkTrigger";
+        public const string IsBlock = "IsBlock";
     }
 }

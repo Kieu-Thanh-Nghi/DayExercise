@@ -31,6 +31,11 @@ public class InputControl : MonoBehaviour
     internal bool MeleAttackInput()
     {
         return Input.GetKeyDown(keys.MeleAtk);
+    }     
+    
+    internal bool BlockInput()
+    {
+        return Input.GetKey(keys.Block);
     }    
     
     internal bool RangeAttackInput()

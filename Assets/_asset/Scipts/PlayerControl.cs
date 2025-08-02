@@ -64,4 +64,11 @@ public class PlayerControl : MonoBehaviour
         if(inputs.DashInput())
             animator.SetTrigger(AnimName.AnimParameter.DashTrigger);
     }
+
+    private void LateUpdate()
+    {
+        animator.ResetTrigger(AnimName.AnimParameter.MeleAtkTrigger);
+        animator.ResetTrigger(AnimName.AnimParameter.DashTrigger);
+        animator.ResetTrigger(AnimName.AnimParameter.StrikeTrigger);
+    }
 }

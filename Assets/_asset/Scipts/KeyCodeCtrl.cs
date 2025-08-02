@@ -10,4 +10,5 @@ public class KeyCodeCtrl : MonoBehaviour
     public KeyCode RangeAtk = KeyCode.H;
     public KeyCode Strike = KeyCode.K;
     public KeyCode Dash = KeyCode.L;
+    public KeyCode Block = KeyCode.U;
 }
