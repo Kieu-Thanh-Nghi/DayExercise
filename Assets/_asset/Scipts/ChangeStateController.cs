@@ -27,11 +27,6 @@ public class ChangeStateController : MonoBehaviour
         return inputs.StrikeInput();
     }
 
-    internal bool toFlyKickState()
-    {
-        return inputs.FlyKickInput();
-    }
-
     public bool CrouchToIdle()
     {
         if(!inputs.DownInput()) return true;

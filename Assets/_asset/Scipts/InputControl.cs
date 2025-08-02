@@ -37,7 +37,7 @@ public class InputControl : MonoBehaviour
         return Input.GetKeyDown(KeyCode.K);
     }
 
-    internal bool FlyKickInput()
+    internal bool DashInput()
     {
         return Input.GetKeyDown(KeyCode.L);
     }
