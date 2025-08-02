@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 7726750724423307365}
   - component: {fileID: 7726750724423307364}
   - component: {fileID: 8774072090546174874}
+  - component: {fileID: 5403911238048847469}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7726750724423307385}
   inputs: {fileID: 7726750724423307363}
+  physic: {fileID: 7726750724423307361}
 --- !u!114 &7726750724423307361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaef3840e6dbaa4f965d932765c55a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keys: {fileID: 5403911238048847469}
 --- !u!114 &7726750724423307390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +353,25 @@ MonoBehaviour:
   IblastPrefab: {fileID: 7601334910744636046, guid: 17b8889ec16bf5944a93535960158988, type: 3}
   Particle: {fileID: 3771986944223453558, guid: 4539d8d9407d5974baf03313fe840c4c, type: 3}
   ShootPosition: {fileID: 3142716852229169681}
+--- !u!114 &5403911238048847469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7726750724423307384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3277bf4846794b479872bca0abeb9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Left: 97
+  Right: 100
+  Down: 115
+  Jump: 32
+  Atk: 106
+  Strike: 107
+  Dash: 108
 --- !u!1 &7726750724637615009
 GameObject:
   m_ObjectHideFlags: 0

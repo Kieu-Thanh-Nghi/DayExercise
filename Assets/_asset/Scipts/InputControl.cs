@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
+    [SerializeField] KeyCodeCtrl keys;
     public bool DownInput()
     {
-        return Input.GetKey(KeyCode.S);
+        return Input.GetKey(keys.Down);
     }
     public float MoveInput()
     {
@@ -17,7 +18,7 @@ public class InputControl : MonoBehaviour
     bool isJump;
     public bool JumpInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(keys.Jump))
         {
             isJump = true;
             StopCoroutine(waitAJump());
@@ -27,19 +28,24 @@ public class InputControl : MonoBehaviour
         return isJump;
     }
 
-    internal bool AttackInput()
+    internal bool MeleAttackInput()
     {
-        return Input.GetKeyDown(KeyCode.J);
+        return Input.GetKeyDown(keys.MeleAtk);
+    }    
+    
+    internal bool RangeAttackInput()
+    {
+        return Input.GetKeyDown(keys.RangeAtk);
     }
 
     internal bool StrikeInput()
     {
-        return Input.GetKeyDown(KeyCode.K);
+        return Input.GetKeyDown(keys.Strike);
     }
 
     internal bool DashInput()
     {
-        return Input.GetKeyDown(KeyCode.L);
+        return Input.GetKeyDown(keys.Dash);
     }
 
     IEnumerator waitAJump()
@@ -59,7 +65,7 @@ public class InputControl : MonoBehaviour
     A isJumpDelay = new();
     public bool J()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(keys.Jump))
         {
             isJumpDelay.value = true;
             StopCoroutine(w(isJumpDelay));

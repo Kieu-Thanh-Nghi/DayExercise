@@ -17,11 +17,6 @@ public class ChangeStateController : MonoBehaviour
         return false;
     }
 
-    internal bool toAttackState()
-    {
-        return inputs.AttackInput();
-    }
-
     internal bool toStrikeState()
     {
         return inputs.StrikeInput();

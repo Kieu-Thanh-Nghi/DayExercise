@@ -11,8 +11,9 @@ public static class AnimName
 
     public static class AnimParameter
     {
-        public const string AtkTrigger = "AttackTrigger";
+        public const string MeleAtkTrigger = "MeleAtkTrigger";
         public const string DashTrigger = "DashTrigger";
         public const string StrikeTrigger = "StrikeTrigger";
+        public const string RangeAtkTrigger = "RangeAtkTrigger";
     }
 }

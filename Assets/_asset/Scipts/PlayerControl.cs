@@ -9,7 +9,6 @@ public class PlayerControl : MonoBehaviour
     Move move;
     TurnSprite turn;
     Jump jump;
-    bool isJump;
     private void Start()
     {
         move = GetComponent<Move>();
@@ -56,12 +55,13 @@ public class PlayerControl : MonoBehaviour
             animator.SetBool(AnimName.Crouch, false);
         }
 
-        if(inputs.AttackInput())
-            animator.SetTrigger(AnimName.AnimParameter.AtkTrigger);
+        if(inputs.MeleAttackInput())
+            animator.SetTrigger(AnimName.AnimParameter.MeleAtkTrigger);        
+        if(inputs.RangeAttackInput())
+            animator.SetTrigger(AnimName.AnimParameter.RangeAtkTrigger);
         if(inputs.StrikeInput())
             animator.SetTrigger(AnimName.AnimParameter.StrikeTrigger);
         if(inputs.DashInput())
             animator.SetTrigger(AnimName.AnimParameter.DashTrigger);
-
     }
 }
