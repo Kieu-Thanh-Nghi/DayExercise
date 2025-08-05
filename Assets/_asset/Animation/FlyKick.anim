@@ -82,9 +82,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: CreateEffDash
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.5
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
     functionName: ForceForward
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 165
+    floatParameter: 150
     intParameter: 0
     messageOptions: 0

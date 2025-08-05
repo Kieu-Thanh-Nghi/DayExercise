@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(WaitToDestroy());
+        Destroy(this.gameObject,LifeTime);
     }
 
     private void FixedUpdate()
@@ -25,14 +25,5 @@ public class Bullet : MonoBehaviour
     public void SetUpLifeTime(float newLifeTime)
     {
         LifeTime = newLifeTime;
-        StopCoroutine(WaitToDestroy());
-        StartCoroutine(WaitToDestroy());
-    }
-
-    IEnumerator WaitToDestroy()
-    {
-        var wait = new WaitForSeconds(LifeTime);
-        yield return wait;
-        Destroy(this.gameObject);
     }
 }
