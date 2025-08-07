@@ -29,6 +29,15 @@ public static class AnimName
 
     public static string DashAttack = "DashAttack";
 
+    public static string PrePare = "Prepare";
+    public static string Intro = "Intro";
+
+    public static string MoveBack = "Move_Back";
+    public static string MoveForward = "Move_Forward";
+
+    public static string MoveUp = "Move_Up";
+    public static string MoveDown = "Move_Down";
+
     public static class AnimParameter
     {
         public const string AtkTrigger = "AttackTrigger";
