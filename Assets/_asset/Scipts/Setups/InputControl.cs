@@ -15,6 +15,16 @@ public class InputControl : MonoBehaviour
         return Input.GetAxis("Horizontal");
     }
 
+    internal bool attackInput()
+    {
+        return Input.GetKeyDown(keys.atk);
+    }
+
+    internal bool teleAtkInput()
+    {
+        return Input.GetKeyDown(keys.TeleAtk);
+    }
+
     DelayTemp DelayisJump = new();
     public bool JumpInput()
     {
@@ -27,6 +37,27 @@ public class InputControl : MonoBehaviour
             return DelayisJump.value;
         }
     }
+
+    internal bool CharTransformInput()
+    {
+        return Input.GetKeyDown(keys.CharTransform);
+    }
+
+    internal bool DashInput()
+    {
+        return Input.GetKeyDown(keys.Dash);
+    }
+
+    internal bool KiChargeInput()
+    {
+        return Input.GetKey(keys.KiCharge);
+    }
+
+    internal bool KiBlastInput()
+    {
+        return Input.GetKeyDown(keys.KiBlast);
+    }
+
     WaitForSeconds wait = new WaitForSeconds(0.25f);
     public void JumpInputDelay()
     {
@@ -36,6 +67,11 @@ public class InputControl : MonoBehaviour
             DelayisJump.value = false;
             StartCoroutine(DelayInput(DelayisJump, wait));
         }
+    }
+
+    internal bool SSKillInput()
+    {
+        return Input.GetKeyDown(keys.SSKill);
     }
 
     internal bool BlockInput()

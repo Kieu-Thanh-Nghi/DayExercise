@@ -12,7 +12,6 @@ public class RunCharIntro : MonoBehaviour
     void Start()
     {
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        Debug.Log("ss");
         waitUntil = new WaitUntil(() => stateInfo.normalizedTime >= 1f);
         StartCoroutine(nameof(PlayAniIntro));
     }

@@ -36,14 +36,13 @@ public class MoveControl : MonoBehaviour
 
     void SetUpAnim(float dir, float dirUpDown)
     {
-        if (dirUpDown > 0.01f) moveAnimPriority = 4;
-        if (dirUpDown < -0.01f) moveAnimPriority = 1;
+        moveAnimPriority = 0; 
         int animDirect = 1;
         if (spriteRenderer.flipX) animDirect = -1;
-        if (dir * animDirect > 0.01f) moveAnimPriority = 2;
-        else if (dir * animDirect < -0.1f) moveAnimPriority = 3;
-        else moveAnimPriority = 0; 
-        if (dirUpDown < -0.01f) moveAnimPriority = 1;
+        if (dirUpDown > 0) moveAnimPriority = 4;
+        if (dir * animDirect > 0) moveAnimPriority = 2;
+        else if (dir * animDirect < 0) moveAnimPriority = 3;
+        if (dirUpDown < 0) moveAnimPriority = 1;
     }
     
     public void MoveUpDown(float dir)

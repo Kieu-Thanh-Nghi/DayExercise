@@ -15,4 +15,15 @@ public class KeyCodeCtrl : MonoBehaviour
     public KeyCode Block = KeyCode.U;
     public KeyCode critAtk = KeyCode.Y;
     public KeyCode Slide = KeyCode.B;
+
+    public KeyCode KiCharge = KeyCode.Space;
+
+    public KeyCode CharTransform = KeyCode.U;
+
+    public KeyCode KiBlast = KeyCode.J;
+
+    public KeyCode SSKill = KeyCode.O;
+    public KeyCode atk = KeyCode.K;
+
+    public KeyCode TeleAtk = KeyCode.I;
 }
