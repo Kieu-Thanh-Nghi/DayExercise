@@ -16,23 +16,21 @@ public class MoveControl : MonoBehaviour
         inputs = GetComponentInChildren<InputControl>();
         animator = GetComponentInChildren<Animator>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        SetUpAnim(inputs.MoveInput(), Input.GetAxis("Vertical"));
-        WhichAnimPlay();
-    }
 
     private void FixedUpdate()
     {
         MoveLeftRight(inputs.MoveInput());
-        MoveUpDown(Input.GetAxis("Vertical"));
+        MoveUpDown(inputs.UpDownInput());
     }
 
     public void MoveLeftRight(float dir)
     {
         transform.Translate(dir * Time.fixedDeltaTime * speed, 0, 0);
     }    
+    public void MoveUpDown(float dir)
+    {
+        transform.Translate(0, dir * Time.fixedDeltaTime * speed, 0);
+    }
 
     void SetUpAnim(float dir, float dirUpDown)
     {
@@ -45,10 +43,6 @@ public class MoveControl : MonoBehaviour
         if (dirUpDown < 0) moveAnimPriority = 1;
     }
     
-    public void MoveUpDown(float dir)
-    {
-        transform.Translate(0, dir * Time.fixedDeltaTime * speed, 0);
-    }
 
     void WhichAnimPlay()
     {

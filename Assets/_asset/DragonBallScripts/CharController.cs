@@ -4,51 +4,64 @@ using UnityEngine;
 
 public class CharController : MonoBehaviour
 {
-    KiCharge _charge;
     InputControl inputs;
-    private void Start()
+    Animator animator;
+    UniformStatesData sData;
+    private void Awake()
     {
-        _charge = GetComponent<KiCharge>();
+        animator = GetComponentInChildren<Animator>();
+        //DState[] states = animator.GetBehaviours<DState>();
+        //Debug.Log(states.Length);
+        sData = GetComponentInChildren<UniformStatesData>();
+        //foreach (var state in states)
+        //{
+        //    state.SetUp(sData);
+        //}
         inputs = GetComponentInChildren<InputControl>();
-        Debug.Log(_charge);
     }
     // Update is called once per frame
     void Update()
     {
-        if (inputs.KiChargeInput())
+        if (inputs.KiChargeInput() && sData.currentState != StatesName.Charge)
         {
-            _charge.enabled = true;
+            sData.currentState = StatesName.Charge;
+            animator.SetInteger(AnimName.KiCharge, 1);
             return;
         }
-        if (inputs.CharTransformInput())
+        if (inputs.CharTransformInput() && sData.currentState != StatesName.Transform)
         {
-            GetComponent<CharTransform>().enabled = true;
+            sData.currentState = StatesName.Transform;
+            animator.SetTrigger(AnimName.CharTransform);
             return;
         }
-        if (inputs.DashInput())
+        if (inputs.DashInput() && sData.currentState != StatesName.Dash)
         {
-            GetComponent<CharDash>().enabled = true;
+            sData.currentState = StatesName.Dash;
+            animator.SetBool(AnimName.Dash, true);
             return;
         }
-        if (inputs.KiBlastInput())
+        if (inputs.KiBlastInput() && sData.currentState != StatesName.KiBlast)
         {
-            GetComponent<KiBlast>().enabled = true;
-            return;
-        }       
-        if (inputs.BlockInput())
-        {
-            GetComponent<CharBlock>().enabled = true;
+            sData.currentState = StatesName.KiBlast;
+            animator.SetInteger(AnimName.KiBlast, animator.GetBehaviour<DKiBlastState>().index);
             return;
         }
-        if (inputs.SSKillInput())
+        if (inputs.BlockInput() && sData.currentState != StatesName.Block)
         {
-            GetComponent<CharSpecialSkill>().enabled = true;
+            sData.currentState = StatesName.Block;
+            animator.SetBool(AnimName.Block, true);
             return;
         }
-        if (inputs.attackInput())
+        if (inputs.SSKillInput() && sData.currentState != StatesName.SpecialSkill)
         {
-            GetComponent<CharAttack>().enabled = true;
+            sData.currentState = StatesName.SpecialSkill;
+            animator.SetTrigger(AnimName.SSkill);
             return;
         }
+        //if (inputs.attackInput())
+        //{
+        //    GetComponent<CharAttack>().enabled = true;
+        //    return;
+        //}
     }
 }

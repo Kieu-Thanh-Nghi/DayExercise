@@ -15,6 +15,11 @@ public class InputControl : MonoBehaviour
         return Input.GetAxis("Horizontal");
     }
 
+    internal float UpDownInput()
+    {
+        return Input.GetAxis("Vertical");
+    }
+
     internal bool attackInput()
     {
         return Input.GetKeyDown(keys.atk);

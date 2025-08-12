@@ -67,6 +67,10 @@ public static class AnimName
     public static string TeleportStart = "Teleport";
     public static string TeleportEnd = "Teleport_End";
 
+    public static string Move = "Move";
+
+    public static string KiBlast = "KiBlast";
+
     public static class AnimParameter
     {
         public const string AtkTrigger = "AttackTrigger";
