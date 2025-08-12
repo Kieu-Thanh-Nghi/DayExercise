@@ -71,6 +71,8 @@ public static class AnimName
 
     public static string KiBlast = "KiBlast";
 
+    public static string AtkCombo = "atkCombo";
+
     public static class AnimParameter
     {
         public const string AtkTrigger = "AttackTrigger";

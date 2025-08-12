@@ -10,6 +10,7 @@ public class DChargeState : DState
     {
         if (animator.GetInteger(AnimName.KiCharge) != 1) return;
         animator.SetInteger(AnimName.KiCharge, 2);
+        Debug.Log("1");
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

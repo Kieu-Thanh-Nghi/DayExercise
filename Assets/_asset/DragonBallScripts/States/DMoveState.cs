@@ -55,6 +55,7 @@ public class DMoveState : DState
         animator.SetInteger(AnimName.Move, -1);
         _data._charController.enabled = false;
         _data._moveControl.enabled = false;
+        Debug.Log("2");
     }
 
     //public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)

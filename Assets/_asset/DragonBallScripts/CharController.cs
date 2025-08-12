@@ -58,10 +58,11 @@ public class CharController : MonoBehaviour
             animator.SetTrigger(AnimName.SSkill);
             return;
         }
-        //if (inputs.attackInput())
-        //{
-        //    GetComponent<CharAttack>().enabled = true;
-        //    return;
-        //}
+        if (inputs.attackInput())
+        {
+            sData.currentState = StatesName.Attack;
+            animator.SetInteger(AnimName.AtkCombo,0);
+            return;
+        }
     }
 }
