@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DKiBlastState : DState
+public class DKiBlastState : DCantMoveState
 {
     public int index;
-    protected override StatesName thisStateName => throw new System.NotImplementedException();
+    protected override StatesName thisStateName => StatesName.KiBlast;
 
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    protected override void DoWhenEnter(Animator animator)
     {
+        base.DoWhenEnter(animator);
         index = 1 - index;
         animator.SetInteger(AnimName.KiBlast, -1);
     }
+
+    protected override void DoWhenInState(Animator animator){}
 }

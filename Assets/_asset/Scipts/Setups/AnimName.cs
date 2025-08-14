@@ -73,6 +73,8 @@ public static class AnimName
 
     public static string AtkCombo = "atkCombo";
 
+    public static string TeleAtk = "TeleAtk";
+
     public static class AnimParameter
     {
         public const string AtkTrigger = "AttackTrigger";

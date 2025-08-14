@@ -22,45 +22,38 @@ public class CharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputs.KiChargeInput() && sData.currentState != StatesName.Charge)
+        if (inputs.KiChargeInput())
         {
-            sData.currentState = StatesName.Charge;
             animator.SetInteger(AnimName.KiCharge, 1);
             return;
         }
-        if (inputs.CharTransformInput() && sData.currentState != StatesName.Transform)
+        if (inputs.CharTransformInput())
         {
-            sData.currentState = StatesName.Transform;
             animator.SetTrigger(AnimName.CharTransform);
             return;
         }
-        if (inputs.DashInput() && sData.currentState != StatesName.Dash)
+        if (inputs.DashInput())
         {
-            sData.currentState = StatesName.Dash;
             animator.SetBool(AnimName.Dash, true);
             return;
         }
-        if (inputs.KiBlastInput() && sData.currentState != StatesName.KiBlast)
+        if (inputs.KiBlastInput())
         {
-            sData.currentState = StatesName.KiBlast;
             animator.SetInteger(AnimName.KiBlast, animator.GetBehaviour<DKiBlastState>().index);
             return;
         }
-        if (inputs.BlockInput() && sData.currentState != StatesName.Block)
+        if (inputs.BlockInput())
         {
-            sData.currentState = StatesName.Block;
             animator.SetBool(AnimName.Block, true);
             return;
         }
-        if (inputs.SSKillInput() && sData.currentState != StatesName.SpecialSkill)
+        if (inputs.SSKillInput())
         {
-            sData.currentState = StatesName.SpecialSkill;
             animator.SetTrigger(AnimName.SSkill);
             return;
         }
         if (inputs.attackInput())
         {
-            sData.currentState = StatesName.Attack;
             animator.SetInteger(AnimName.AtkCombo,0);
             return;
         }

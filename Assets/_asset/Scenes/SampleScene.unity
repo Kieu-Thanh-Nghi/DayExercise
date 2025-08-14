@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd6ba204d170b4c9c3502ed700e5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charAttack: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!50 &270889445
 Rigidbody2D:
   serializedVersion: 4
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdd6ba204d170b4c9c3502ed700e5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charAttack: {fileID: 0}
+  animator: {fileID: 703965376}
 --- !u!1 &730026615
 GameObject:
   m_ObjectHideFlags: 0

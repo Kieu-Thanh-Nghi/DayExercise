@@ -17,5 +17,6 @@ public enum StatesName
     KiBlast = 9,
     KiBeam = 10,
     Block = 11,
-    Dash = 12
+    Dash = 12,
+    TeleAttak = 13
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class DMoveState : DState
 {
@@ -10,16 +11,13 @@ public class DMoveState : DState
 
     protected override StatesName thisStateName => StatesName.Move;
 
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    protected override void DoWhenEnter(Animator animator)
     {
-        if(_data.currentState != thisStateName)
-        {
-            _data.currentState = thisStateName;
-            inputs = _data._inputs;
-            spriteRenderer = _data._spriteRenderer;
-            _data._charController.enabled = true;
-            _data._moveControl.enabled = true;
-        }
+        base.DoWhenEnter(animator);
+        inputs = _data._inputs;
+        spriteRenderer = _data._spriteRenderer;
+        _data._charController.enabled = true;
+        _data._moveControl.enabled = true;
     }
     //public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     //{
@@ -28,12 +26,8 @@ public class DMoveState : DState
     //    _data._charController.enabled = true;
     //    _data._moveControl.enabled = true;
     //}
-    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    protected override void DoWhenInState(Animator animator)
     {
-        //if (_data.currentState != thisStateName)
-        //{
-        //    _data.currentState = thisStateName;
-        //}
         SetUpAnim(animator, inputs.MoveInput(), inputs.UpDownInput());
     }
 
@@ -53,10 +47,8 @@ public class DMoveState : DState
     {
         if (_data.currentState == thisStateName) return;
         animator.SetInteger(AnimName.Move, -1);
-        _data._charController.enabled = false;
-        _data._moveControl.enabled = false;
-        Debug.Log("2");
     }
+
 
     //public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     //{
