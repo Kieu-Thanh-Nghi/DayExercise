@@ -27,7 +27,6 @@ public class DAttackState : DCantMoveState
     }
     protected override void DoWhenInState(Animator animator)
     {
-        Debug.Log(atkIndex);
         if (isAnimEnd && atkIndex > maxAttackChain)
         {
             if (!CheckAnimEnd(animator))

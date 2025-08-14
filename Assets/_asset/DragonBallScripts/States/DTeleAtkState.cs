@@ -32,9 +32,7 @@ public class DTeleAtkState : DState
             
             if (isAtkAble && _data._inputs.teleAtkInput())
             {
-                Debug.Log("aa");
                 animator.SetInteger(AnimName.TeleAtk, Random.Range(1, maxAtkAmount));
-                Debug.Log(atkCount);
                 atkCount++;
                 isAtkAble = false;
                 return;
