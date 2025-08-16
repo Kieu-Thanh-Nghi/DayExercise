@@ -31,6 +31,12 @@ public class ChargeCtrler : AloneState
                 GetComponent<AttackSuperCtrler>().enabled = true;
                 clickAble = false;
                 return;
+            }            
+            if (inputs.BlockInput())
+            {
+                GetComponent<CounterCtrler>().enabled = true;
+                clickAble = false;
+                return;
             }
             _chanrgeInput = inputs.KiChargeInput();
             animHandle.PlayCharge(_chanrgeInput);

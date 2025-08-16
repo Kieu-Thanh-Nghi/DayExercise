@@ -81,6 +81,8 @@ public static class AnimName
 
     public static string AtkSuper = "AtkSuper";
 
+    public static string Counter { get; internal set; }
+
     public static class AnimParameter
     {
         public const string AtkTrigger = "AttackTrigger";

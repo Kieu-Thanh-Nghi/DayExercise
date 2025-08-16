@@ -17,6 +17,11 @@ public class AnimHandler : MonoBehaviour
         animator.SetInteger(AnimName.Hurt, hurtCount);
     }
 
+    internal void PlayCounter(int v)
+    {
+        throw new NotImplementedException();
+    }
+
     [SerializeField] Animator animator;
     TeleAtkSM teleAtkSM;
 
