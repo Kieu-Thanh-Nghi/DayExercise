@@ -75,6 +75,12 @@ public static class AnimName
 
     public static string TeleAtk = "TeleAtk";
 
+    public static string KiBeam = "KiBeam";
+
+    public static string Hurt = "Hurt";
+
+    public static string AtkSuper = "AtkSuper";
+
     public static class AnimParameter
     {
         public const string AtkTrigger = "AttackTrigger";
