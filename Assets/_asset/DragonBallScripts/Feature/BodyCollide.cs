@@ -7,6 +7,8 @@ public class BodyCollide : MonoBehaviour
     [SerializeField] GameObject Character;
     [SerializeField] StatesController[] mb;
     [SerializeField] HurtCtrler hurtCtrler;
+    bool isImunity = false;
+    public bool isCounter = false;
 
     [ContextMenu("Reset")]
     public void AllStates()
@@ -16,6 +18,11 @@ public class BodyCollide : MonoBehaviour
 
     public virtual void Hurt()
     {
+        if (isImunity)
+        {
+            isCounter = true;
+            return;
+        }
         if(!hurtCtrler.enabled)
         {
             foreach (var m in mb)
@@ -28,5 +35,11 @@ public class BodyCollide : MonoBehaviour
             hurtCtrler.enabled = true;
         }
         hurtCtrler.DoWhenHurt();
+    }
+
+    public void SetImunity(bool isImunityNow)
+    {
+        isCounter = false;
+        isImunity = isImunityNow;
     }
 }

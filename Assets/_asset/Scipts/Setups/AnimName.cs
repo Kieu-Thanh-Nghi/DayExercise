@@ -81,7 +81,7 @@ public static class AnimName
 
     public static string AtkSuper = "AtkSuper";
 
-    public static string Counter { get; internal set; }
+    public static string Counter = "Counter";
 
     public static class AnimParameter
     {

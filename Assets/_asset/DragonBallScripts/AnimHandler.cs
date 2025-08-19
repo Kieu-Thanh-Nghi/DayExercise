@@ -19,7 +19,8 @@ public class AnimHandler : MonoBehaviour
 
     internal void PlayCounter(int v)
     {
-        throw new NotImplementedException();
+        animator.SetInteger(AnimName.Counter, v);
+        //Debug.Log(animator.GetInteger(AnimName.Counter));
     }
 
     [SerializeField] Animator animator;
